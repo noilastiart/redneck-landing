@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Greetings from Redneck Cabo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body {
+      height: 100%; margin: 0;
+      background: #007ba7; /* fallback color behind image edges */
+    }
+    .wrap {
+      position: fixed; inset: 0;
+      display: grid; place-items: center;
+    }
+    .card {
+      width: min(92vw, 1100px);
+      box-shadow: 0 12px 36px rgba(0,0,0,.45);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .card img { display:block; width:100%; height:auto; }
+    .sr { position:absolute; left:-9999px; }
+  </style>
+</head>
+<body>
+  <a class="wrap" href="https://www.etsy.com/shop/Noilasti" target="_blank" rel="noopener">
+    <span class="sr">Shop Noilasti on Etsy</span>
+    <div class="card">
+      <img src="rc-postcard.jpg" alt="Greetings from Redneck Cabo" />
+    </div>
+  </a>
+</body>
+</html>
