@@ -6,26 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     html, body {
-      height: 100%; margin: 0;
-      background: #007ba7; /* fallback color behind image edges */
+      height: 100%;
+      margin: 0;
+      background: #007ba7; /* teal fallback behind postcard */
+      display: flex;
+      justify-content: center;  /* horizontal center */
+      align-items: center;      /* vertical center */
     }
-    .wrap {
-      position: fixed; inset: 0;
-      display: grid; place-items: center;
-    }
+
     .card {
-      width: min(92vw, 1100px);
-      box-shadow: 0 12px 36px rgba(0,0,0,.45);
+      max-width: 90vw;   /* keeps postcard responsive */
+      max-height: 90vh;  /* prevents overflow on small screens */
+      box-shadow: 0 12px 36px rgba(0,0,0,0.45);
       border-radius: 8px;
       overflow: hidden;
     }
-    .card img { display:block; width:100%; height:auto; }
-    .sr { position:absolute; left:-9999px; }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
-  <a class="wrap" href="https://www.etsy.com/shop/Noilasti" target="_blank" rel="noopener">
-    <span class="sr">Shop Noilasti on Etsy</span>
+  <a href="https://www.etsy.com/shop/Noilasti" target="_blank" rel="noopener">
     <div class="card">
       <img src="rc-postcard.jpg" alt="Greetings from Redneck Cabo" />
     </div>
