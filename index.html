@@ -2,32 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Greetings from Redneck Cabo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root{
+      /* tweak these if you want */
+      --y: 0%;              /* push card up (negative) or down (positive) */
+      --maxw: 1100px;       /* max postcard width on big screens */
+      --card-shadow: 0 12px 36px rgba(0,0,0,.45);
+      --bg: #007ba7;        /* teal backdrop */
+    }
+
     html, body {
-  .wrap {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  align-items: start; /* moves it to the top */
-  padding-top: 5vh;   /* adjust this number up/down to nudge */
-  }
-  .card {
-    width: min(92vw, 1100px);
-    box-shadow: 0 12px 36px rgba(0,0,0,.45);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .card img { display:block; width:100%; height:auto; }
-</style>
+      height: 100dvh;
+      margin: 0;
+      background: var(--bg);
+    }
+
+    /* Centers the card both ways and adds a little safe padding */
+    .wrap {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 6vh min(4vw, 24px); /* breathing room on mobile & desktop */
+      box-sizing: border-box;
+    }
+
+    .card {
+      width: min(92vw, var(--maxw));
+      transform: translateY(var(--y));
+      box-shadow: var(--card-shadow);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff; /* just in case image hasn’t loaded yet */
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* keep link accessible but visually just the image */
+    .sr { 
+      position: absolute; 
+      left: -9999px; 
+    }
+  </style>
 </head>
 <body>
-  <a href="https://www.etsy.com/shop/Noilasti" target="_blank" rel="noopener">
+  <a class="wrap" href="https://www.etsy.com/shop/Noilasti" target="_blank" rel="noopener">
+    <span class="sr">Shop Noilasti on Etsy</span>
     <div class="card">
       <img src="rc-postcard.jpg" alt="Greetings from Redneck Cabo" />
     </div>
   </a>
 </body>
 </html>
+
+ 
+
